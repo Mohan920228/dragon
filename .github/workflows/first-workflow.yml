@@ -19,7 +19,7 @@ jobs:
         - name: upload artifact
           uses: actions/upload-artifact@v4
           with:
-            name: upload-artifact
+            name: dragon-artifact
             path: .
     testing:
         runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
           - name: Download artifact
             uses: actions/download-artifact@v7
             with:
-                name: download artifact
+                name: dragon-artifact
                 path: .
           - name: testing the file exists
             run: grep -i "dragon" dragon-and-cow.txt
@@ -40,7 +40,7 @@ jobs:
           - name: Download artifact
             uses: actions/download-artifact@v7
             with:
-                name: download-artifact
+                name: dragon-artifact
                 path: dragon-and-cow.txt
           - name: read the file
             run: cat dragon-and-cow.txt
