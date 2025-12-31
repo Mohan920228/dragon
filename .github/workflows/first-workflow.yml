@@ -1,0 +1,22 @@
+---
+name: first-workflow
+on: push
+
+jobs:
+    checkoutrepo:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v6
+        - name: install conway
+          run: |
+            sudo apt update
+            sudo apt install cowsay
+        - name: generate dragon-and-cow
+          run: |
+            cowsay -l | grep dragon
+            cowsay -f dragon-and-cow "I am the Dragon and the Cow" > dragon-and-cow.txt
+        - name: print output
+          run: cat dragon-and-cow.txt
+        - name: list of files
+          run: ls -a
