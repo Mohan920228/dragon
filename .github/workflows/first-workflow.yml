@@ -23,7 +23,7 @@ jobs:
           - name: sleep for 10 seconds
             run: sleep 10
           - name: testing the file exists
-            run: grep -i "dragon" dragon-and-cow.txt
+            run: grep -i "dragon-and-cow" dragon-and-cow.txt
         
     deploying:
         runs-on: ubuntu-latest
